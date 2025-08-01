@@ -32,12 +32,32 @@ main {
 
 /* Estilo para a imagem do Pokémon */
 .pokemon__image {
-  width: 10%; /* Define a largura como 10% do elemento pai */
-  height: 15%; /* Define a altura como 15% do elemento pai */
-  position: absolute; /* Posiciona o elemento de forma absoluta */
-  bottom: 50%; /* Posiciona o elemento 50% do fundo */
-  left: 27%; /* Posiciona o elemento 27% da esquerda */
-  transform: translate(-63%, 20%); /* Move o elemento para ajustar a posição */
+  position: absolute;
+  bottom: 50%;
+  left: 27%;
+  transform: translate(-63%, 20%);
+}
+
+/* Estilos para cada geração de Pokémon */
+.pokemon__image.gen-5 {
+  width: 10%;
+  height: 15%;
+}
+
+.pokemon__image.gen-6 {
+  width: 10%;
+  height: 15%;
+}
+
+.pokemon__image.gen-7 {
+  width: 16%;
+  height: 14%;
+}
+
+.pokemon__image.gen-8 {
+  width: 16%;
+  height: 14%;
+  bottom: 49.5%;
 }
 
 /* Estilo para os dados do Pokémon (número e nome) */
@@ -99,6 +119,54 @@ main {
 }
 
 /* Media Queries para responsividade */
+@media (max-width: 700px) {
+  .pokedex {
+    max-width: 500px;
+  }
+
+  .pokemon__image {
+    left: 50%;
+    transform: translate(-50%, 20%);
+  }
+
+  .pokemon__image.gen-5,
+  .pokemon__image.gen-6 {
+    width: 15%;
+    height: 12%;
+  }
+
+  .pokemon__image.gen-7,
+  .pokemon__image.gen-8 {
+    width: 18%;
+    height: 14%;
+  }
+
+  .pokemon__data {
+    top: 56%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: clamp(10px, 3vw, 18px);
+  }
+
+  .pokemon__infos {
+    top: 34%;
+    right: 10%;
+    font-size: clamp(9px, 2.5vw, 15px);
+  }
+
+  .form {
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+
+  .input__search {
+    width: 100%;
+    font-size: clamp(11px, 3.5vw, 17px);
+  }
+}
+
 @media (max-width: 600px) {
   main {
     margin-top: 10%;

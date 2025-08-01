@@ -47,30 +47,22 @@ const renderPokemon = async (pokemon) => {
     pokemonHeight.innerHTML = 'Altura:' + ' ' + (data.height * 0.1).toFixed(2) + ' ' + 'metro(s)';
     pokemonWeight.innerHTML = 'Peso: ' + (data.weight / 10) + 'kg'
 
-    // Verifica a geração do Pokémon e define a imagem apropriada
+    // Reseta as classes de geração e remove a imagem de erro
+    pokemonImage.className = 'pokemon__image';
+
+    // Verifica a geração do Pokémon e define a imagem e a classe apropriada
     if (data.id >= 1 && data.id <= 649) {
       pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-    }
-
-    if (data.id >= 650 && data.id <= 721) {
+      pokemonImage.classList.add('gen-5');
+    } else if (data.id >= 650 && data.id <= 721) {
       pokemonImage.src = data['sprites']['versions']['generation-vi']['x-y']['front_default'];
-      document.querySelector('.pokemon__image').style.width = '10%';
-      document.querySelector('.pokemon__image').style.height = '15%';
-      document.querySelector('.pokemon__image').style.bottom = '50%';
-    }
-
-    if (data.id >= 721 && data.id <= 809) {
+      pokemonImage.classList.add('gen-6');
+    } else if (data.id >= 722 && data.id <= 809) {
       pokemonImage.src = data['sprites']['versions']['generation-vii']['icons']['front_default'];
-      document.querySelector('.pokemon__image').style.width = '16%';
-      document.querySelector('.pokemon__image').style.height = '14%';
-      document.querySelector('.pokemon__image').style.bottom = '50%';
-    }
-
-    if (data.id >= 809 && data.id <= 905) {
+      pokemonImage.classList.add('gen-7');
+    } else if (data.id >= 810 && data.id <= 905) {
       pokemonImage.src = data['sprites']['versions']['generation-viii']['icons']['front_default'];
-      document.querySelector('.pokemon__image').style.width = '16%';
-      document.querySelector('.pokemon__image').style.height = '14%';
-      document.querySelector('.pokemon__image').style.bottom = '49.5%';
+      pokemonImage.classList.add('gen-8');
     }
 
     // Limpa o campo de entrada
