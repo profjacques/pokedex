@@ -12,8 +12,7 @@
 /* Estilo para o corpo da página */
 body {
   text-align: center; /* Centraliza o texto */
-  background-color: #08aeea; /* Define a cor de fundo */
-  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%); /* Aplica um gradiente linear no fundo */
+  background-color: #D3D3D3; /* Define a cor de fundo */
   min-height: 100vh; /* Define a altura mínima como 100% da altura da viewport */
 }
 
@@ -97,4 +96,48 @@ main {
   box-shadow: inset -4.84629px -4.84629px 9.69259px rgba(255, 255, 255, 0.59), /* Adiciona sombras internas */
               inset 7.26944px 7.26944px 19.3852px rgba(95, 3, 18, 0.81);
   border-radius: 7.26944px; /* Define o raio da borda */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 600px) {
+  main {
+    margin-top: 10%;
+  }
+
+  .pokedex {
+    max-width: 400px;
+  }
+
+  .pokemon__image {
+    width: 20%;
+    height: 12%;
+    bottom: 52%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+  }
+
+  .pokemon__data {
+    top: 58%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: clamp(12px, 4vw, 20px);
+  }
+
+  .pokemon__infos {
+    top: 35%;
+    right: 8%;
+    font-size: clamp(10px, 3vw, 16px);
+  }
+
+  .form {
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+
+  .input__search {
+    width: 100%;
+    font-size: clamp(12px, 4vw, 18px);
+  }
 }
